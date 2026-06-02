@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>sample page | basic html tags</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(145deg, #f8f9ff 0%, #eef2fa 100%);
+            font-family: system-ui, 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+            line-height: 1.5;
+            padding: 2rem 1.5rem;
+            color: #1a2c3e;
+        }
+
+        .page-card {
+            max-width: 1100px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.94);
+            backdrop-filter: blur(0px);
+            border-radius: 2.5rem;
+            box-shadow: 0 20px 35px -12px rgba(0, 0, 0, 0.2), 0 1px 3px rgba(0, 0, 0, 0.05);
+            padding: 2rem 2rem 2.5rem 2rem;
+            transition: all 0.2s;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+        }
+
+        /* header section */
+        .tag-header {
+            border-bottom: 3px dashed #84b0d4;
+            margin-bottom: 1.8rem;
+            padding-bottom: 0.75rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        h1 {
+            font-size: 2.4rem;
+            letter-spacing: -0.02em;
+            background: linear-gradient(135deg, #1f4870, #2a6f8f);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            font-weight: 700;
+        }
+
+        .badge {
+            background: #e9edf2;
+            padding: 0.3rem 1rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #2c5368;
+            font-family: monospace;
+            box-shadow: inset 0 0 0 1px rgba(0,0,0,0.05);
+        }
+
+        h2 {
+            font-size: 1.7rem;
+            font-weight: 600;
+            margin: 1.5rem 0 0.8rem 0;
+            color: #1e4a6e;
+            border-left: 5px solid #6c9ebf;
+            padding-left: 1rem;
+        }
+
+        h3 {
+            font-weight: 600;
+            font-size: 1.3rem;
+            margin: 1.2rem 0 0.6rem 0;
+            color: #2c5a74;
+        }
+
+        .grid-demo {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.2rem;
+            margin: 1.2rem 0;
+        }
+
+        .card-simple {
+            background: #ffffffdd;
+            backdrop-filter: blur(2px);
+            border-radius: 1.2rem;
+            padding: 1rem 1.4rem;
+            box-shadow: 0 5px 12px rgba(0,0,0,0.05);
+            border: 1px solid #e2edf7;
+            flex: 1 1 180px;
+            transition: transform 0.1s ease;
+        }
+
+        .card-simple:hover {
+            transform: translateY(-3px);
+            background: white;
+            border-color: #bdd9f0;
+        }
+
+        code, .code-inline {
+            background: #eef3fc;
+            font-family: 'Fira Code', 'Cascadia Code', monospace;
+            font-size: 0.9rem;
+            padding: 0.2rem 0.4rem;
+            border-radius: 12px;
+            color: #a51b5a;
+            border: 1px solid #cbdde9;
+        }
+
+        pre {
+            background: #1e2a36;
+            color: #e2f0fa;
+            padding: 1rem 1.2rem;
+            border-radius: 20px;
+            overflow-x: auto;
+            font-size: 0.85rem;
+            font-family: 'Fira Code', monospace;
+            margin: 1rem 0 1.2rem 0;
+            box-shadow: inset 0 0 0 1px #38536b, 0 6px 12px -8px black;
+        }
+
+        .button-demo {
+            background: #2c6e9e;
+            border: none;
+            color: white;
+            padding: 0.6rem 1.3rem;
+            font-weight: 600;
+            border-radius: 60px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: background 0.2s, transform 0.05s;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+        }
+
+        .button-demo:hover {
+            background: #1b5680;
+            transform: scale(0.97);
+        }
+
+        .table-wrap {
+            overflow-x: auto;
+            margin: 1rem 0;
+            border-radius: 1rem;
+            background: #ffffffcc;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.9rem;
+        }
+
+        th, td {
+            border: 1px solid #cbdde9;
+            padding: 0.7rem 0.9rem;
+            text-align: left;
+        }
+
+        th {
+            background: #e4eff8;
+            font-weight: 600;
+            color: #1c4e70;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8fbfe;
+        }
+
+        footer {
+            margin-top: 2.5rem;
+            text-align: center;
+            font-size: 0.8rem;
+            color: #4c6f8c;
+            border-top: 1px solid #caddf0;
+            padding-top: 1.8rem;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .download-area {
+            background: #eef2fa;
+            border-radius: 2rem;
+            padding: 0.8rem 1.2rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        a {
+            color: #2c6e9e;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        hr {
+            margin: 1.5rem 0;
+            border: none;
+            height: 2px;
+            background: linear-gradient(to right, #caddf0, transparent);
+        }
+
+        @media (max-width: 650px) {
+            body {
+                padding: 1rem;
+            }
+            .page-card {
+                padding: 1.5rem;
+            }
+            h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="page-card" id="mainContent">
+    <div class="tag-header">
+        <h1>📄 HTML playground · essential tags</h1>
+        <div class="badge">🌿 simple & semantic</div>
+    </div>
+
+    <p>This file demonstrates a collection of <strong>basic HTML elements</strong> — headings, paragraphs, lists, images, tables, forms, media, and more. <br> 
+    You can <span class="code-inline">download</span> this HTML file and open it locally, edit it, or reuse the structure.</p>
+
+    <!-- ========= SECTION: headings + text formatting ========= -->
+    <h2>📝 1. Headings & text styling</h2>
+    <h1>&lt;h1&gt; Main heading (level 1)</h1>
+    <h2>&lt;h2&gt; Section title</h2>
+    <h3>&lt;h3&gt; Subsection</h3>
+    <h4>&lt;h4&gt; smaller heading</h4>
+    <h5>&lt;h5&gt; almost tiny</h5>
+    <h6>&lt;h6&gt; the smallest heading</h6>
+    
+    <p>This is a regular paragraph with <strong>strong importance</strong>, <em>emphasized text</em>, 
+    <mark>highlighted mark tag</mark>, <small>small print</small>, and <del>deleted text</del> + <ins>inserted text</ins>. 
+    You can also use <code>&lt;code&gt;</code> for inline code snippets or <kbd>Ctrl</kbd> + <kbd>C</kbd> for keyboard input.</p>
+    
+    <blockquote style="border-left: 4px solid #84b0d4; background: #eef3fc; padding: 0.8rem 1.2rem; border-radius: 1rem; margin: 1rem 0;">
+        💡 "Blockquote example: HTML is the skeleton of every webpage. Simple tags create powerful structures."
+    </blockquote>
+
+    <!-- ========= SECTION: lists ========= -->
+    <h2>📋 2. Lists (ordered & unordered)</h2>
+    <div class="grid-demo">
+        <div class="card-simple">
+            <h3 style="margin-top:0;">🍎 Unordered</h3>
+            <ul>
+                <li>First item</li>
+                <li>Second item with <a href="#">inline link</a></li>
+                <li>Nested inside
+                    <ul>
+                        <li>sub-level A</li>
+                        <li>sub-level B</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="card-simple">
+            <h3 style="margin-top:0;">🔢 Ordered list</h3>
+            <ol>
+                <li>Step one: plan</li>
+                <li>Step two: build</li>
+                <li>Step three: test
+                    <ol type="a">
+                        <li>unit tests</li>
+                        <li>integration</li>
+                    </ol>
+                </li>
+            </ol>
+        </div>
+        <div class="card-simple">
+            <h3 style="margin-top:0;">📖 Definition list</h3>
+            <dl>
+                <dt><strong>HTML</strong></dt>
+                <dd>HyperText Markup Language</dd>
+                <dt><strong>CSS</strong></dt>
+                <dd>Cascading Style Sheets</dd>
+            </dl>
+        </div>
+    </div>
+
+    <!-- ========= SECTION: tables ========= -->
+    <h2>📊 3. Table example</h2>
+    <div class="table-wrap">
+        <table>
+            <thead>
+                <tr><th>Tag name</th><th>Purpose</th><th>Common attributes</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>&lt;a&gt;</td><td>anchor / hyperlink</td><td>href, target, rel</td></tr>
+                <tr><td>&lt;img&gt;</td><td>image embedding</td><td>src, alt, width, height</td></tr>
+                <tr><td>&lt;input&gt;</td><td>form input field</td><td>type, name, placeholder</td></tr>
+                <tr><td>&lt;button&gt;</td><td>clickable button</td><td>type, disabled, onclick</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- ========= SECTION: media (image + svg placeholder) ========= -->
+    <h2>🖼️ 4. Media elements (image & svg)</h2>
+    <figure style="margin: 0.8rem 0 1rem 0;">
+        <img src="https://placehold.co/600x200/DAE9F4/2c6e9e?text=Sample+Image+%7C+HTML+Tag+Demo" alt="Placeholder demo image representing HTML content" style="max-width:100%; border-radius: 1.2rem; border: 1px solid #caddf0;">
+        <figcaption style="font-size:0.8rem; margin-top:0.3rem;">Fig.1 — simple placeholder image (external url).</figcaption>
+    </figure>
+
+    <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; align-items: center;">
+        <div>
+            <p>🔊 Audio preview (sample tag):</p>
+            <audio controls src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" style="width: 220px;">Your browser does not support audio.</audio>
+            <div><small class="code-inline">&lt;audio controls&gt;</small> example from free test asset.</small></div>
+        </div>
+        <div>
+            <p>📺 Video preview (placeholder):</p>
+            <video width="240" controls style="border-radius: 16px;" poster="https://placehold.co/400x200/FFFFFF/2c6e9e?text=video+preview">
+                <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
+                Your browser doesn't support video tag.
+            </video>
+        </div>
+    </div>
+
+    <!-- ========= SECTION: forms and interactive tags ========= -->
+    <h2>✏️ 5. Form & input elements</h2>
+    <form action="#" method="get" style="background: #F1F6FD; padding: 1.2rem 1.5rem; border-radius: 1.6rem;">
+        <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-bottom: 1rem;">
+            <div style="flex:1">
+                <label for="nameField"><strong>Name:</strong></label>
+                <input type="text" id="nameField" name="visitor_name" placeholder="e.g., Maria" style="width:100%; padding: 0.5rem; border-radius: 40px; border:1px solid #b9cee8;">
+            </div>
+            <div style="flex:1">
+                <label for="emailField"><strong>Email:</strong></label>
+                <input type="email" id="emailField" name="email" placeholder="hello@example.com" style="width:100%; padding: 0.5rem; border-radius: 40px; border:1px solid #b9cee8;">
+            </div>
+        </div>
+        <div style="margin-bottom: 1rem;">
+            <label><strong>Favorite web tech:</strong></label>
+            <div style="display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 0.3rem;">
+                <label><input type="checkbox" name="tech" value="html"> HTML</label>
+                <label><input type="checkbox" name="tech" value="css"> CSS</label>
+                <label><input type="checkbox" name="tech" value="js"> JavaScript</label>
+            </div>
+        </div>
+        <div style="margin-bottom: 1rem;">
+            <label><strong>Experience level:</strong></label>
+            <div>
+                <label><input type="radio" name="level" value="beginner"> Beginner</label>
+                <label><input type="radio" name="level" value="intermediate"> Intermediate</label>
+                <label><input type="radio" name="level" value="pro"> Pro</label>
+            </div>
+        </div>
+        <div style="margin-bottom: 1.2rem;">
+            <label for="comment"><strong>Comments / feedback:</strong></label>
+            <textarea id="comment" rows="2" placeholder="write something about these HTML tags..." style="width:100%; border-radius: 1rem; border:1px solid #b9cee8; padding:0.6rem;"></textarea>
+        </div>
+        <div style="display: flex; gap: 0.8rem; flex-wrap: wrap;">
+            <button type="button" class="button-demo" id="demoAlertBtn">✨ Show alert (demo)</button>
+            <button type="reset" class="button-demo" style="background: #5f7f9a;">⟳ Reset form</button>
+            <button type="submit" class="button-demo" style="background: #2d6a4f;">💾 Submit (simulated)</button>
+        </div>
+        <p style="font-size:0.75rem; margin-top: 0.8rem;">* clicking submit will just refresh because action="#". No data is sent.</p>
+    </form>
+
+    <!-- ========= SECTION: additional tags (details, progress, etc) ========= -->
+    <h2>🔧 6. Extra semantic & modern tags</h2>
+    <div style="display: flex; flex-wrap: wrap; gap: 1.5rem;">
+        <div style="flex: 1; min-width: 180px;">
+            <details style="background: #f7fafd; padding: 0.6rem 1rem; border-radius: 1.2rem;">
+                <summary><strong>📁 Click to expand (details/summary)</strong></summary>
+                <p>This block is hidden until you click. It's useful for collapsible content. You can place any HTML inside: <code>&lt;details&gt;</code> + <code>&lt;summary&gt;</code>.</p>
+                <ul><li>works natively</li><li>no javascript required</li></ul>
+            </details>
+        </div>
+        <div style="flex: 1;">
+            <label>Progress indicator (progress tag):</label>
+            <progress value="65" max="100" style="width: 100%; height: 1rem; border-radius: 20px;"></progress>
+            <div><label>Meter (meter tag):</label> <meter value="0.8" min="0" max="1" high="0.9" low="0.3" optimum="0.7">80%</meter> storage usage demo</div>
+        </div>
+    </div>
+
+    <!-- ========= SECTION: link and navigation ========= -->
+    <h2>🔗 7. Hyperlinks & navigation</h2>
+    <p>Visit <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element" target="_blank" rel="noopener noreferrer">MDN HTML elements reference (opens new tab)</a> — external link example.<br>
+    You can also create an anchor to the top: <a href="#mainContent">⬆️ jump to top of this card</a>. 
+    And here's an email link: <a href="mailto:demo@example.com?subject=HTML%20sample">demo@example.com</a>.</p>
+    
+    <!-- horizontal rule & misc -->
+    <hr>
+    <h2>🧩 8. Code block & inline elements showcase</h2>
+    <pre>&lt;!-- you can embed a full code block --&gt;
+&lt;div class="greeting"&gt;
+    &lt;p&gt;Hello, world! 👋&lt;/p&gt;
+&lt;/div&gt;
+        
+// javascript comment example
+function showTagInfo() {
+    console.log("HTML tags demo ready");
+}</pre>
+    
+    <p>Other inline tags: <span style="background:#ffe6c7;">custom span style</span>, <abbr title="HyperText Markup Language">HTML</abbr> abbreviation, 
+    <cite>"citation"</cite>, <dfn>definition term</dfn> and <b>bold</b> / <i>italic</i>. Also &lt;br&gt; line break<br> is useful.</p>
+    
+    <!-- download section: show download button via javascript (dynamic blob) -->
+    <div style="margin: 1.8rem 0 0.5rem 0; text-align: center;">
+        <div class="download-area">
+            <span>📎 <strong>save this page:</strong> </span>
+            <button id="downloadHtmlBtn" class="button-demo" style="background: #2a5f4c;">⬇️ Download this .html file</button>
+            <span style="font-size:0.75rem;">(original source, ready to reuse)</span>
+        </div>
+    </div>
+
+    <footer>
+        <span>✨ HTML5 compliant · uses head, body, block elements, forms, media, tables, semantic tags</span>
+        <span>📅 simple demo — you can edit & share</span>
+    </footer>
+</div>
+
+<script>
+    (function() {
+        // interactive alert demo for the button
+        const alertBtn = document.getElementById('demoAlertBtn');
+        if (alertBtn) {
+            alertBtn.addEventListener('click', function() {
+                alert("🎉 Hello! This alert shows that JavaScript is working, and the HTML button tag with type='button' is interactive.\nYou are viewing a simple HTML file with many tags.");
+            });
+        }
+
+        // Download functionality: export the entire HTML of this document (or we can export exactly the current page content)
+        // But to keep it clean, we generate a full HTML file from the current document structure.
+        // However, the download should give the user a fresh copy of this same page (preserving styles, scripts, etc)
+        // We'll fetch the outerHTML of the whole document, but we cannot just get DOCTYPE easily. We'll build a proper string with doctype.
+        const downloadBtn = document.getElementById('downloadHtmlBtn');
+        if (downloadBtn) {
+            downloadBtn.addEventListener('click', function() {
+                // Gather current document's full content 
+                const docHtml = document.documentElement.cloneNode(true);
+                // we must ensure we don't break any event listeners? No issues, we're just generating static markup.
+                const doctype = '<!DOCTYPE html>\n';
+                const serialized = docHtml.outerHTML;
+                const fullHtml = doctype + serialized;
+                // create blob and trigger download
+                const blob = new Blob([fullHtml], { type: 'text/html' });
+                const link = document.createElement('a');
+                const url = URL.createObjectURL(blob);
+                link.href = url;
+                link.download = 'html_tags_sample.html';  // filename
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                URL.revokeObjectURL(url);
+                
+                // optional small visual feedback
+                const originalText = downloadBtn.innerText;
+                downloadBtn.innerText = '✅ Saved!';
+                setTimeout(() => {
+                    downloadBtn.innerText = originalText;
+                }, 1500);
+            });
+        }
+
+        // handle demo submit prevention to avoid actual reload (optional)
+        const anyForm = document.querySelector('form');
+        if (anyForm) {
+            anyForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Demo mode: form not actually sent. Check the input tags & HTML structure!');
+                // you can optionally reset, but we do not reset to preserve example filled values.
+            });
+        }
+    })();
+</script>
+</body>
+</html>
